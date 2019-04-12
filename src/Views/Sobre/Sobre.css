@@ -1,0 +1,133 @@
+.sobre_background {
+    background: linear-gradient(180deg, #fff, #fff, #d4d3fd 100%);
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px
+}
+
+.sobre-content {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 80px
+}
+
+.desc {
+    color: #757575;
+    font-size: 18px
+}
+h2, p {
+    font-family: 'Cabin Condensed', sans-serif;
+}
+
+h2 {color: #4d4d4dcf}
+
+.display {
+    width: 480px;
+    height: 340px;
+    display: flex;
+    flex-direction: column
+}
+
+.none {
+    display: none
+}
+
+ul { list-style: none; margin: 0; padding: 0 }
+
+li { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+li p { margin-left: 15px; margin: 8px}
+
+.imgs-container {
+    width: 48%;
+    max-width: 800px;
+    /* min-width: 320px; */
+    display: flex;
+    flex-wrap: wrap;
+    position: relative
+}
+
+.iansa-img {
+    width: 50%;
+    /* min-width: 320px; */
+    max-width: 390px;
+    height: 300px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    /* margin: 2px; */
+}
+
+.refeitorio { background-image: url('../../utils/imgs/refeitorio.jpg') }
+.planta { background-image: url('../../utils/imgs/planta.jpg')}
+.van { background-image: url('../../utils/imgs/van.jpg')}
+.cabelo { background-image: url('../../utils/imgs/cabelo.jpg')}
+
+.tab-content {
+    width: 48%;
+    max-width: 800px;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+}
+
+.slide-content {
+    width: 90%;
+    display: none;
+    margin: 0 auto;
+    padding: 10px 20px 20px 20px;
+    overflow-x: hidden;
+    margin-bottom: 10px;
+    overflow-y: -webkit-paged-y;
+}
+
+.slick-next { right: 10px; top: 0px }
+
+.slick-prev {left: 10px; top: 0px}
+
+.slick-next::before, .slick-prev::before {
+    color: #4b7a85
+}
+
+  .slick-thumb {
+    bottom: -45px;
+  }
+  .slick-thumb li {
+    width: 60px;
+    height: 45px;
+  }
+
+  .slick-list {
+      /* padding: 10px; */
+      word-break: normal;
+      text-align: center
+  }
+
+  .w90-5 {
+      width: 90%;
+      margin-left: 5%
+  }
+
+@media(max-width:1024px) {
+    .display{ height: auto; margin-bottom: 20px};
+    .content { flex-direction: column; justify-content: center}
+    .tab-content, .imgs-container { width: 100%}
+    .tab-content {  align-items: center}
+    .content { margin-top: 50px}
+    .sobre-content { margin-top: 50px}
+}
+
+@media(max-width:768px) {
+    .iansa-img {width: 100%; max-width: 100%}
+    .tab-content { display: none}
+    .slide-content {display: block}
+}

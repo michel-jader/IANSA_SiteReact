@@ -1,0 +1,10 @@
+* {
+  font-family: 'Cabin Condensed', sans-serif;
+  user-select: none
+}
+
+.flex {display: flex}
+.column {flex-direction: column}
+.row {flex-direction: row}
+.t-center { text-align:center;}
+.align-center {align-items: center }

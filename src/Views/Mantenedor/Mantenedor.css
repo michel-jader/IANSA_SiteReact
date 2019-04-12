@@ -1,0 +1,110 @@
+.mantenedor_background {
+    background: linear-gradient(180deg, #fff, #fff, #bff5ef 100%);
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px
+}
+
+h1 {color: #424242 }
+
+h3 {color: #757575}
+
+p {color: #757575}
+
+.title-container { width: 70%; max-width: 760px; min-width: 318px;}
+
+.price-card-wrapper { 
+    width: 95%;
+    max-width: 1700px;
+    min-width: 320px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px
+}
+
+.price-card {
+    padding: 16px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 
+    0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s ease-out;
+    margin: 20px;
+}
+
+.price-card:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+.jc-center {justify-content: center}
+
+.outer-circle { 
+    width: 250px; 
+    height: 250px; 
+    border-radius: 50%;
+    background-color: #424242
+}
+
+.inner-circle {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background-color: #757575
+}
+
+.carinho {
+    background-image: url('../../utils/imgs/carinho.png');
+    width: 109px;
+    height: 109px;
+}
+
+.felicidade {
+    background-image: url('../../utils/imgs/felicidade.png');
+    width: 109px;
+    height: 109px;
+}
+
+.amor { 
+    background-image: url('../../utils/imgs/amor.png');
+    width: 121px;
+    height: 112px;
+}
+
+.title { font-size: 28px; font-weight: bold }
+
+.cifra { font-size: 20px;  font-weight: bold; margin-right: 5px }
+
+.price { font-size: 40px; font-weight: bold }
+
+.btn {
+    width: 130px;
+    height: 42px;
+    border-radius: 10px;
+    margin-top: 10px
+}
+
+.btn p {font-size: 22px; color: #fff}
+
+.mt-20 {margin-top: 20px}
+
+.btn-yellow {background-color: #e8cb09}
+
+.btn-red {background-color: #e53935}
+
+.btn-green {background-color: #64dd17 }
+
+.green {background-color:#e7fdcc }
+
+.light-green {background-color: #f1fee1}
+
+.red {background-color: #f1d8d8}
+
+.light-red {background-color: #f6e8e8}
+
+.yellow { background-color: #fff3ce }
+
+.light-yellow { background-color: #fff8e1}
+
+button:hover {cursor: pointer;}

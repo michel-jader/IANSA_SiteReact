@@ -1,0 +1,26 @@
+
+.servicos_background {
+    background: linear-gradient(180deg, #fff, #fff, #fff, #f64c662a);
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px
+}
+
+h1 {color: #424242 }
+
+h3 {color: #757575}
+
+.title-container {
+    width: 70%;
+    max-width: 500px;
+    min-width: 318px;
+}
+
+.card-wrapper { 
+    width: 95%;
+    max-width: 1380px;
+    min-width: 320px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px
+}

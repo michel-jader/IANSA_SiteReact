@@ -1,0 +1,37 @@
+.tabs {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+.tabs-tab {
+    display: inline-block;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 8px; 
+    background: none;
+    color: #616161;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    /* width: 100px; */
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Cabin Condensed', sans-serif;
+    /* font-weight: bold; */
+    font-size: 20px;
+    width: 80px
+}
+
+.tabs-tab:hover, .tabs-tab--active {
+    /* background: hotpink; */
+    color: #f64c65
+}
+
+.tab-underline {
+    position: absolute;
+    /* top: 100%; */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px solid #f64c65
+}

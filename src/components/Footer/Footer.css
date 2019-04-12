@@ -1,0 +1,104 @@
+.footer {
+    margin-top: 10px;
+    width: 100%;
+    /* height: 150px; */
+    background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+    box-shadow: 1px 0px 3px rgba(0,0,0,0.12), 
+                1px 0px 2px rgba(0,0,0,0.24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px
+}
+
+.footer_content {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.img_container {
+    width: 180px;
+    height: 90px;
+    border-right: 2px solid #424242;
+    display: flex;
+    align-items: center
+}
+
+.flex {display: flex}
+
+.column { flex-direction: column }
+
+.row { flex-direction: row }
+
+.al-ce { align-items: center; flex-wrap: wrap}
+
+.column .h1 {
+    font-size: 18px;
+    margin: 0px !important;
+}
+
+.column .h3 {
+    font-size: 14px;
+    margin: 0px !important
+}
+
+.mlf-20 { margin: 0px 20px}
+
+.size-img {
+    width:38px;
+    height:38px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-out
+}
+
+.media-btn, .shopping-btn {
+    transition: all 0.3s ease-out
+}
+
+.shopping-btn {
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px
+}
+
+.shopping-btn:hover {
+    transform: scale(1.1)
+}
+
+.media-btn:hover {
+    transform: scale(1.1);
+}
+
+.media-btn:hover .size-img {
+    filter: grayscale(5%)
+}
+
+.shopping-btn:hover .size-img {
+    filter: grayscale(0%)
+}
+
+.h-110 { height: 110px }
+
+@media(max-width:865px) {
+    .footer_content {
+        justify-content: space-around
+    }
+}
+
+@media(max-width:602px) {
+    .img_container {
+        border: none;
+        margin-bottom: 20px
+    }
+    .al-ce {
+        justify-content: center !important
+    }
+}
