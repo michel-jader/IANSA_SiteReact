@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router'
 import Home from '../Views/Home/Home';
 import Sobre from '../Views/Sobre/Sobre';
-import Servicos from '../Views/Serviços/Servicos';
+import Servicos from '../Views/Servicos/Servicos';
 import Mantenedor from '../Views/Mantenedor/Mantenedor';
 import Contato from '../Views/Contato/Contato';
 import Andamento from '../Views/Andamento/Andamento';

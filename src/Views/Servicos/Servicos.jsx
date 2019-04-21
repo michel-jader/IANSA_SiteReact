@@ -12,7 +12,7 @@ export default props =>
 
             <div className="flex column t-center title-container">
                 <h1>Nossos Serviços</h1>
-                <h3>O IANSA acolhe as pessos da melhor forma possível, transformando um momento delicado em esperança e carinho.</h3>
+                <h3>O IANSA acolhe as pessoas da melhor forma possível, transformando um momento delicado em esperança e carinho.</h3>
             </div>
 
             <div className="card-wrapper flex row align-center">
