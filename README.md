@@ -7,5 +7,5 @@ To run the app in the development mode:
 
 
 ###  Deploying App
- * Run `npm build` to make build folder and
+ * Run `npm run build` to make build folder
  * Run `firebase deploy` to deploy this app on firebase (make sure you are logged on firebase CLI)
