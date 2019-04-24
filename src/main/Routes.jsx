@@ -6,6 +6,7 @@ import Servicos from '../Views/Servicos/Servicos';
 import Mantenedor from '../Views/Mantenedor/Mantenedor';
 import Contato from '../Views/Contato/Contato';
 import Andamento from '../Views/Andamento/Andamento';
+import Equipe from '../Views/Equipe/Equipe';
 
 export default () =>
     <Switch>
@@ -14,9 +15,8 @@ export default () =>
         <Route path="/servicos" component={Servicos} />
         <Route path="/eventos" component={Andamento} />
         <Route path="/seja-um-mantenedor" component={Mantenedor} />
-        <Route path="/equipe" component={Andamento} />
+        <Route path="/equipe" component={Equipe} />
         <Route path="/entre-em-contato" component={Contato} />
         <Route path="/transparencia" component={Andamento} />
         <Redirect from="*" to="/" />
-
     </Switch>

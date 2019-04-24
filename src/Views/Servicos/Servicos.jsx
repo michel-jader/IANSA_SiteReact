@@ -5,7 +5,7 @@ import Container from '../../components/Container/Container';
 import Card from '../../components/Card/Card';
 import Footer from '../../components/Footer/Footer';
 
-export default props =>
+export default () =>
 
     <Container classe='servicos_background'>
         <div className="flex column align-center" style={{ marginTop: 50 }}>
