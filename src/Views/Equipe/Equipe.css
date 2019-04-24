@@ -7,6 +7,7 @@
 .equipe-content {
     display: flex;
     width: 95%;
+    max-width: 1024px;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
@@ -55,7 +56,7 @@
     justify-content: center;
     text-align: center;
     background: transparent;
-    border-radius: 6px
+    border-radius:0px 0px 6px 6px;
 }
 
 .name-desc span {
@@ -69,5 +70,5 @@
 }
 
 .overlay:hover~.name-desc {
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.6)
 }
