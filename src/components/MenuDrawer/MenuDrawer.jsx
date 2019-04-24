@@ -26,7 +26,7 @@ const menuDrawer = props => {
                 <li><a href="/servicos">SERVIÇOS</a> </li>
                 <li><a href="/em-andamento">EVENTOS</a></li>
                 <li><a href="/seja-um-mantenedor">SEJA UM MANTENEDOR</a></li>
-                <li><a href="/em-andamento">EQUIPE</a></li>
+                <li><a href="/equipe">EQUIPE</a></li>
                 <li><a href="/entre-em-contato">CONTATO</a></li>
                 <li><a href="/em-andamento">TRANSPARÊNCIA</a></li>
             </ul>
