@@ -15,6 +15,7 @@ export default () =>
         <Route path="/sobre" component={Sobre} />
         <Route path="/servicos" component={Servicos} />
         <Route path="/eventos" component={Eventos} />
+        <Route path="/eventos/1335" component={Andamento}/>
         <Route path="/seja-um-mantenedor" component={Mantenedor} />
         <Route path="/equipe" component={Equipe} />
         <Route path="/entre-em-contato" component={Contato} />

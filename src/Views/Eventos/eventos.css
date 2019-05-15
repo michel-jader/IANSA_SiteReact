@@ -64,15 +64,38 @@ h3 {color: #757575}
     transition: all 0.3s linear
 }
 
-.post button p {
-    color: white;
-    font-size: 18px;
-}
+.post button p { color: white; font-size: 18px }
 
-.p-6 { 
-    padding: 6px 8px 
-}
+.p-6 { padding: 6px 8px }
 
 .post button:hover {
     box-shadow: 1px 6px 7px rgba(0,0,0,0.3)
+}
+
+.p-container {
+    width: 95%;
+    max-width: 1380px;
+    min-width: 320px;
+    background-color: #ef4c65;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 
+    0 1px 2px rgba(0,0,0,0.24);
+    height: 600px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    position: relative
+}
+
+.p-container div {
+    width: 50%;
+    height: 600px;
+    /* border: 2px solid white */
+}
+
+.post-image {
+    width: 100%;
+    height: 600px;
+    border-radius: 4px 0px 0px 4px;
 }
