@@ -24,7 +24,7 @@ const menuDrawer = props => {
             <ul>
                 <li> <a href="/sobre">SOBRE</a> </li>
                 <li><a href="/servicos">SERVIÇOS</a> </li>
-                <li><a href="/em-andamento">EVENTOS</a></li>
+                <li><a href="/eventos">EVENTOS</a></li>
                 <li><a href="/seja-um-mantenedor">SEJA UM MANTENEDOR</a></li>
                 <li><a href="/equipe">EQUIPE</a></li>
                 <li><a href="/entre-em-contato">CONTATO</a></li>
