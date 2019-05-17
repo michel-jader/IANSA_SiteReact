@@ -15,10 +15,10 @@ export default () =>
                 </p>
             </div>
             <div className="flex-column-center m-40 t-center" style={{width:320}}>
-                <h2 className="sniglet f5f m-0">FIQUE POR DENTRO DOS EVENTOS DO IANSA</h2>
-                <p className="m-0">Veja fotos, notícias e muito mais!</p>
+                <h2 className="sniglet f5f m-0">PALESTRA LIDERANÇA COM EXCELÊNCIA </h2>
+                <p className="m-0 f5f" style={{fontWeight: 'bold', fontSize:16}} >Palestra com Daniel P. Lourençon, Gerente executivo de Negócios da Chokdoce e Professor Universitário.</p>
                 {/* <p className="m-0">e muito mais</p> */}
-                <button className="btn"> <a href="/"> EM BREVE! </a> </button>
+                <button className="btn"> <a href="https://www.sympla.com.br/palestra---lideranca-com-excelencia__534234" target="blank"> SABER MAIS </a> </button>
             </div>
 
         </div>

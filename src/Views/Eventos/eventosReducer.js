@@ -98,7 +98,8 @@ const INITIAL_STATE = {
                     }
                 ]
             }
-        }, {
+        },
+        {
             "id": 1331,
             "date": "2019-05-14T14:35:00",
             "date_gmt": "2019-05-14T17:35:00",
@@ -191,7 +192,8 @@ const INITIAL_STATE = {
                     }
                 ]
             }
-        }],
+        }
+    ],
     noticia: null
 }
 
