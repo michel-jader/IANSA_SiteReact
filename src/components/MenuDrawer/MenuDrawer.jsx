@@ -29,6 +29,7 @@ const menuDrawer = props => {
                 <li><a href="/equipe">EQUIPE</a></li>
                 <li><a href="/entre-em-contato">CONTATO</a></li>
                 <li><a href="/em-andamento">TRANSPARÊNCIA</a></li>
+                <li><a href="/adm">SOU ADM</a></li>
             </ul>
             <a href="https://pag.ae/bhg8d0n" target="blacnk">
                 <button className="donate">

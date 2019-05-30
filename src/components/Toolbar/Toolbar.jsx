@@ -26,6 +26,7 @@ const Toolbar = props => (
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/equipe">EQUIPE </NavLink></li>
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/entre-em-contato">CONTATO </NavLink></li>
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/transparencia">TRANSPARÊNCIA </NavLink></li>
+                    <li><NavLink activeStyle={{ color: '#f64c65' }} to="/adm">SOU ADM</NavLink></li>
                 </ul>
             </div>
             <a href="https://pag.ae/bhg8d0n" target="blank"> <button className="donate-btn"> DOE AQUI</button></a>

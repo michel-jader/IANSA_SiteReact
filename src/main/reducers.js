@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import eventosReducer from '../Views/Eventos/eventosReducer';
+import eventosReducer from '../reducers/eventosReducer';
+import loginReducer from '../reducers/loginReducer';
 
 const reducerRaiz = combineReducers({
-    noticias: eventosReducer
+    noticias: eventosReducer,
+    loginReducer
 })
 
 export default reducerRaiz

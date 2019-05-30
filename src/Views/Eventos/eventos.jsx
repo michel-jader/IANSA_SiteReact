@@ -6,7 +6,7 @@ import './eventos.css';
 import '../../main/App.css';
 import Container from '../../components/Container/Container';
 import Footer from '../../components/Footer/Footer';
-import { definirPost } from './eventosActions'
+import { definirPost } from '../../actions/eventosActions'
 
 const Eventos = props =>
     <Container classe="eventos_background">
