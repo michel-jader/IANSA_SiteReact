@@ -29,7 +29,15 @@ library.add(
 
 class App extends Component {
 
-  state = { menuAberto: false }
+  state = {
+    menuAberto: false,
+    modoAdm: false
+  }
+
+  async componentWillMount() {
+    let administrador = await sessionStorage.getItem('admLogado')
+    this.setState({ modoAdm: administrador })
+  }
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
@@ -50,7 +58,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Toolbar menuClickHandler={this.drawerToggleClickHandler} />
+          <Toolbar
+            modoAdm={this.state.modoAdm}
+            menuClickHandler={this.drawerToggleClickHandler}
+          />
           <MenuDrawer
             show={this.state.menuAberto}
             click={this.backdropClickHandler}

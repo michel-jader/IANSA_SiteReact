@@ -4,7 +4,7 @@ export const logar = (usuario, senha) => (dispatch) => {
     setTimeout(() => {
         if (usuario === 'iansaADM' && senha === 'iansa2019ADM') {
             dispatch(logado(true))
-            sessionStorage.setItem('admLogado', true)
+            sessionStorage.setItem('admLogado', 'true')
             dispatch(switch_loading(false))
             dispatch(handle_status('sucesso'))
         } else {
@@ -20,7 +20,7 @@ export const deslogar = () => async (dispatch) => {
     setTimeout(() => {
         dispatch(logado(false))
         dispatch(switch_loading(false))
-    }, 100);
+    }, 1000);
 }
 
 export const logado = (value) => ({ type: 'VERIFICAR_LOGADO', payload: value })

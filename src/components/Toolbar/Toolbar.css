@@ -81,6 +81,12 @@ a .donate-btn {
 
 .toolbar-img { width: 165px; height: 31px; margin: 15px }
 
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media(max-width:1000px) {
     .t-nav-item { display: none }
     .d-1000 { display: flex}

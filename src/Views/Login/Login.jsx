@@ -86,7 +86,11 @@ class Login extends Component {
                     txtSucesso='Você agora está logado como Administrador!'
                     txtErro='Verifique o usuário e senha digitados e também sua conexão com a internet.'
                     acaoErro={() => this.handleErro()}
-                    acaoSucesso={() => this.props.handle_status(null)}
+                    acaoSucesso={() => {
+                        this.props.handle_status(null)
+                        window.location.reload()
+                    }
+                    }
                 />
 
                 <div className="flex column align-center">
@@ -99,10 +103,14 @@ class Login extends Component {
                                 style={{ fontSize: 56 }}
                             />
                             <h1>Você está logado como Administrador</h1>
-                                <button
-                                    onClick={() => this.props.deslogar()}
-                                    className="button-out">
-                                    SAIR DO MODO ADMINISTRADOR
+                            <button
+                                onClick={() => {
+                                    this.props.deslogar()
+                                    window.location.reload()
+                                }
+                                }
+                                className="button-out">
+                                SAIR DO MODO ADMINISTRADOR
                             </button>
                         </div>
                         :

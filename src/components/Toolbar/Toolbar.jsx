@@ -1,25 +1,30 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
-import { connect } from 'react-redux';
 import './Toolbar.css'
 import logo from '../../utils/imgs/logo.png'
 import DrawerToggleButton from '../MenuDrawer/DrawerToggleButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Toolbar = props => (
+export default ({ menuClickHandler, modoAdm }) => (
 
     <header className="toolbar">
         <nav className="t-nav">
             <div className="logo">
                 <div className="d-1000">
-                    <DrawerToggleButton click={props.menuClickHandler} />
+                    <DrawerToggleButton click={menuClickHandler} />
                 </div>
-                <Link to="/">
+                <Link className="flex-center-center" to="/">
                     <img src={logo} alt="" className="toolbar-img"></img>
+                    {modoAdm &&
+                        <FontAwesomeIcon
+                            icon='user-cog'
+                            color='#227b87'
+                            size='2x'
+                        />}
                 </Link>
             </div>
             <div className="t-nav-item">
                 <ul>
-                    <li> <h1>{props.logado}</h1></li>
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/sobre">SOBRE </NavLink></li>
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/servicos">SERVIÇOS </NavLink></li>
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/eventos">EVENTOS </NavLink></li>
@@ -34,9 +39,3 @@ const Toolbar = props => (
         </nav>
     </header>
 );
-
-const mapStateToProps = state => ({
-    logado: state.loginReducer.logado
-})
-
-export default connect(mapStateToProps, null)(Toolbar)
