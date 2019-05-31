@@ -23,9 +23,14 @@
     align-items: center
 }
 
+.flex-c-c {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .login-card {
     display: flex;
-    flex-direction: column;
     background-color: rgba(255, 255, 255, 0.85);
     width: 90%;
     min-width: 295px;
@@ -47,7 +52,17 @@
     align-self: flex-end;
 }
 
+.button-out {
+    background-color: #f64e65;
+    color: white;
+    width: 100%;
+    border-radius: 4px;;
+    height: 48px;
+}
+
 .title-p {
     font-size: 30px;
     margin-bottom: 5px;
 }
+
+.t-center { text-align: center}

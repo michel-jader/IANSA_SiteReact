@@ -25,6 +25,7 @@ export default ({ status, acaoSucesso, acaoErro, txtSucesso, txtErro }) =>
                 {status === 'sucesso' ?
                     <Link to="/" style={{ width: '100%' }}>
                         <button
+                        onClick={acaoSucesso}
                             className="m-c-button f-c-c"
                             style={{ backgroundColor: '#4CAF50' }}>
                             <p>Ok</p>

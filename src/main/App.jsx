@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faBars, faArrowCircleLeft, faCheck, faUtensils,
-  faBed, faBus, faChild, faGift, faBook, faExclamationCircle
+  faBed, faBus, faChild, faGift, faBook, faExclamationCircle, faUserCog
 } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter } from 'react-router-dom';
 
@@ -23,7 +23,8 @@ library.add(
   faChild,
   faGift,
   faBook,
-  faExclamationCircle
+  faExclamationCircle,
+  faUserCog
 )
 
 class App extends Component {

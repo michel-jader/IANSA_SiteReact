@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
+import { connect } from 'react-redux';
 import './Toolbar.css'
 import logo from '../../utils/imgs/logo.png'
 import DrawerToggleButton from '../MenuDrawer/DrawerToggleButton';
@@ -8,7 +9,6 @@ const Toolbar = props => (
 
     <header className="toolbar">
         <nav className="t-nav">
-
             <div className="logo">
                 <div className="d-1000">
                     <DrawerToggleButton click={props.menuClickHandler} />
@@ -19,6 +19,7 @@ const Toolbar = props => (
             </div>
             <div className="t-nav-item">
                 <ul>
+                    <li> <h1>{props.logado}</h1></li>
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/sobre">SOBRE </NavLink></li>
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/servicos">SERVIÇOS </NavLink></li>
                     <li><NavLink activeStyle={{ color: '#f64c65' }} to="/eventos">EVENTOS </NavLink></li>
@@ -34,4 +35,8 @@ const Toolbar = props => (
     </header>
 );
 
-export default Toolbar
+const mapStateToProps = state => ({
+    logado: state.loginReducer.logado
+})
+
+export default connect(mapStateToProps, null)(Toolbar)

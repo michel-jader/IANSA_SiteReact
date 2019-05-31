@@ -1,23 +1,26 @@
+
 export const logar = (usuario, senha) => (dispatch) => {
     dispatch(switch_loading(true))
     setTimeout(() => {
         if (usuario === 'iansaADM' && senha === 'iansa2019ADM') {
             dispatch(logado(true))
+            sessionStorage.setItem('admLogado', true)
             dispatch(switch_loading(false))
             dispatch(handle_status('sucesso'))
         } else {
-            dispatch(logado(false))
             dispatch(switch_loading(false))
             dispatch(handle_status('falha'))
         }
     }, 2000);
 }
 
-export const deslogar = () => (dispatch) => {
-    dispatch({
-        type: 'DESLOGAR',
-        payload: false
-    })
+export const deslogar = () => async (dispatch) => {
+    dispatch(switch_loading(true))
+    await sessionStorage.removeItem('admLogado')
+    setTimeout(() => {
+        dispatch(logado(false))
+        dispatch(switch_loading(false))
+    }, 100);
 }
 
 export const logado = (value) => ({ type: 'VERIFICAR_LOGADO', payload: value })
