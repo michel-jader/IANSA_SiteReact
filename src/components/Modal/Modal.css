@@ -1,0 +1,47 @@
+.background {
+    position: fixed;
+    background-color: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000
+}
+
+.f-c-c {
+    display: flex;
+    align-items: center;
+    justify-content: center
+ }
+
+.modal-card {
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    padding: 8px;
+}
+
+.m-c-header {
+    height: 64px;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 1px solid rgb(200,200,200)
+}
+
+.m-c-body {
+    flex-direction: column;
+    text-align: center
+}
+
+.m-c-button {
+    height: 48px;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.m-c-button p {
+    color: #fff;
+    font-size: 18px;
+}

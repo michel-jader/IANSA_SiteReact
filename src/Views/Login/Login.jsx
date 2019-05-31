@@ -4,10 +4,11 @@ import Input from 'muicss/lib/react/input'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { logar, switch_loading } from '../../actions/loginActions';
+import { logar, switch_loading, handle_status } from '../../actions/loginActions';
 import Loading from '../../components/loading/Loading';
 import './Login.css'
 import '../../main/App.css'
+import Modal from '../../components/Modal/Modal';
 
 class Login extends Component {
     constructor(props) {
@@ -48,12 +49,27 @@ class Login extends Component {
         this.setState({ formErrors, [name]: value })
     };
 
+    handleErro() {
+        this.props.handle_status(null);
+        this.setState({
+            usuario: null,
+            senha: null
+        })
+    }
+
     render() {
         return (
             <Container classe="home_container login_background">
 
                 <Loading
                     visivel={this.props.loading ? true : false}
+                />
+
+                <Modal
+                    status={this.props.status}
+                    txtSucesso='Você agora está logado como Administrador!'
+                    txtErro='Verifique o usuário e senha digitados e também sua conexão com a internet.'
+                    acaoErro={() => this.handleErro()}
                 />
 
                 <div className="flex column align-center">
@@ -68,7 +84,11 @@ class Login extends Component {
                         <div className="login-card">
 
                             <form
-                                style={{ width: '100%' }}
+                                style={{
+                                    width: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'column'
+                                }}
                                 onSubmit={this.handleSubmit}
                                 autoComplete="false"
                             >
@@ -98,7 +118,6 @@ class Login extends Component {
                                     onChange={this.handleChange}
                                 />
 
-
                                 <button
                                     type="submit"
                                     className="login-button">
@@ -107,9 +126,7 @@ class Login extends Component {
 
                             </form>
                         </div>
-
                     </div>
-
                 </div>
 
             </Container>
@@ -120,12 +137,13 @@ class Login extends Component {
 
 const mapStateToProps = state => ({
     loading: state.loginReducer.loading,
-    // status: state.status
+    status: state.loginReducer.status
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     logar,
-    switch_loading
+    switch_loading,
+    handle_status
 },
     dispatch
 );

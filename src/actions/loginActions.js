@@ -1,16 +1,16 @@
-
 export const logar = (usuario, senha) => (dispatch) => {
-    console.log(`USUARIO: ${usuario}, SENHA: ${senha}`)
     dispatch(switch_loading(true))
     setTimeout(() => {
         if (usuario === 'iansaADM' && senha === 'iansa2019ADM') {
             dispatch(logado(true))
             dispatch(switch_loading(false))
+            dispatch(handle_status('sucesso'))
         } else {
             dispatch(logado(false))
             dispatch(switch_loading(false))
+            dispatch(handle_status('falha'))
         }
-    }, 3000);
+    }, 2000);
 }
 
 export const deslogar = () => (dispatch) => {
@@ -23,3 +23,8 @@ export const deslogar = () => (dispatch) => {
 export const logado = (value) => ({ type: 'VERIFICAR_LOGADO', payload: value })
 
 export const switch_loading = (value) => ({ type: 'LOADING', payload: value })
+
+export const handle_status = (result) => ({
+    type: 'STATUS',
+    payload: result
+})

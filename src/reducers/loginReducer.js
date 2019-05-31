@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
     logado: false,
-    loading: false
+    loading: false,
+    status: null
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -9,6 +10,8 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, logado: action.payload }
         case 'LOADING':
             return { ...state, loading: action.payload }
+        case 'STATUS':
+            return { ...state, status: action.payload }
         default:
             return state
     }
