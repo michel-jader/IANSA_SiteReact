@@ -128,6 +128,76 @@ h3 {color: #757575}
     color: #f0f0f0
 }
 
+.card-tabela-eventos {
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.14), 
+                0 3px 4px 0 rgba(0,0,0,.12), 
+                0 1px 5px 0 rgba(0,0,0,.2);
+    color: rgba(0,0,0,0.87);
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 8px;
+    width: 98%;
+    max-width: 840px;
+    min-width: 300px;
+    margin-top: 20px;
+}
+
+.card-tabela-eventos .header {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.card-tabela-eventos .header p {
+    color: #757575;
+    font-size: 21px;
+    margin: 0px
+}
+
+.table {
+    width: 100%;
+    margin: 20px 0px 48px 0px;
+}
+
+tr {
+    height: 48px;
+}
+
+.table th {
+    text-align: left;
+    font-size: 16px;
+}
+
+.table td {
+    font-size: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    margin: 0
+}
+
+.add-button {
+    padding: 8px;
+    color: #ef4c65;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    align-self: flex-end;
+    margin-bottom: 5px;
+}
+/* 
+.table-content {
+    display: flex;
+    width: 100%;
+    max-width: 960px;
+    min-width: 320px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center
+} */
+
 @media(max-width: 1024px) {
     .p-container-content {
         width: 100%;
