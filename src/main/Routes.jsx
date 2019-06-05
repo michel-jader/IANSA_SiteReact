@@ -9,14 +9,15 @@ import Andamento from '../Views/Andamento/Andamento';
 import Equipe from '../Views/Equipe/Equipe';
 import Eventos from '../Views/Eventos/eventos';
 import Login from '../Views/Login/Login';
+import EventoInfo from '../Views/EventoInfo/EventoInfo';
 
 export default () =>
     <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/sobre" component={Sobre} />
         <Route path="/servicos" component={Servicos} />
-        <Route path="/eventos" component={Eventos} />
-        {/* <Route path="/eventos/1335" component={Andamento}/> */}
+        <Route exact path="/eventos" component={Eventos} />
+        <Route path="/eventos/:id" component={EventoInfo} />
         <Route path="/seja-um-mantenedor" component={Mantenedor} />
         <Route path="/equipe" component={Equipe} />
         <Route path="/entre-em-contato" component={Contato} />
