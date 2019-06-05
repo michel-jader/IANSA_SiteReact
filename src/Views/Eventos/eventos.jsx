@@ -49,13 +49,13 @@ class Eventos extends Component {
                                             {this.props.listaNoticias.map(noticia => (
                                                 <div className="post" key={noticia.id}>
                                                     <img
-                                                        src="https://queconceito.com.br/wp-content/uploads/evento.jpg"
+                                                        src={noticia.imagemCapa}
                                                         alt=""
                                                         className="image"
                                                     />
                                                     <div className="p-6">
-                                                        <p className="post-title">{noticia.title.rendered}</p>
-                                                        <p className="post-desc"> {noticia.excerpt.rendered} </p>
+                                                        <p className="post-title">{noticia.titulo}</p>
+                                                        <p className="post-desc"> {noticia.descricao} </p>
                                                     </div>
                                                     <button onClick={() => { this.props.definirPost(noticia) }}>
                                                         <p>Ver mais</p>
@@ -129,6 +129,7 @@ class Eventos extends Component {
                                     <table cellSpacing="0" className="table">
                                         <thead>
                                             <tr>
+                                                <th>Imagem</th>
                                                 <th>Evento</th>
                                                 <th>Data</th>
                                                 <th>Ações</th>
@@ -137,8 +138,19 @@ class Eventos extends Component {
                                         <tbody>
                                             {this.props.listaNoticias.map((noticia, index) => (
                                                 <tr key={index}>
-                                                    <td> Título que você deu para a Notícia </td>
-                                                    <td> 04/06/2019 </td>
+                                                    <td>
+                                                        <img alt="imagem de capa"
+                                                            src={noticia.imagemCapa}
+                                                            width={40}
+                                                            height={40}
+                                                            style={{
+                                                                borderRadius: 50,
+                                                                marginTop: 5
+                                                            }}
+                                                        />
+                                                    </td>
+                                                    <td> {noticia.titulo} </td>
+                                                    <td> {noticia.data} </td>
 
                                                     <td>
                                                         <button style={{ marginRight: 5 }}>
