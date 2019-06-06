@@ -4,7 +4,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faBars, faArrowCircleLeft, faCheck, faUtensils,
   faBed, faBus, faChild, faGift, faBook, faExclamationCircle, 
-  faUserCog, faTrashAlt, faEdit, faPlus, faLongArrowAltLeft
+  faUserCog, faTrashAlt, faEdit, faPlus, faLongArrowAltLeft, faTimes, faArrowCircleRight
 } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter } from 'react-router-dom';
 
@@ -29,7 +29,9 @@ library.add(
   faTrashAlt,
   faEdit,
   faPlus,
-  faLongArrowAltLeft
+  faLongArrowAltLeft,
+  faTimes,
+  faArrowCircleRight
 )
 
 class App extends Component {

@@ -26,7 +26,6 @@ class Eventos extends Component {
     async handleAdm() {
         const admLogado = await sessionStorage.getItem('admLogado')
         this.setState({ modoADM: admLogado })
-        console.log(admLogado)
     }
 
     render() {

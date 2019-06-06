@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-// import { bindActionCreators } from 'redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Container from '../../components/Container/Container';
+import Footer from '../../components/Footer/Footer';
 import '../Eventos/eventos.css'
 import '../../main/App.css';
 import './EventoInfo.css'
-import Footer from '../../components/Footer/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class EventoInfo extends Component {
     constructor(props) {
         super(props)
         this.state = {
             id: null,
-            noticia: {}
+            noticia: {},
+            indexSelect: null
         }
     }
 
@@ -29,6 +29,16 @@ class EventoInfo extends Component {
         });
     }
 
+    mudarFoto = (numero, aoVoltar) => {
+        if (this.state.noticia.imagens[this.state.indexSelect + numero]) {
+            this.setState({
+                ...this.state, indexSelect: this.state.indexSelect + numero
+            })
+        } else {
+            this.setState({ ...this.state, indexSelect: aoVoltar })
+        }
+    }
+
     render() {
         return (
             <Container classe="eventos_background">
@@ -40,9 +50,6 @@ class EventoInfo extends Component {
                         <h3>{this.state.noticia.descricao}</h3>
 
                     </div>
-
-
-                    {/* <div className="separator" /> */}
 
                     <div className="img-content">
                         <img
@@ -65,7 +72,7 @@ class EventoInfo extends Component {
 
                             <React.Fragment>
 
-                                {this.state.noticia.imagens.map(imagem => (
+                                {this.state.noticia.imagens.map((imagem, index) => (
                                     <img
                                         key={imagem.id}
                                         alt="img"
@@ -73,7 +80,7 @@ class EventoInfo extends Component {
                                         width={100}
                                         height={90}
                                         className="imgs"
-                                    // style={{ }}
+                                        onClick={() => this.setState({ indexSelect: index })}
                                     />
                                 ))}
 
@@ -90,13 +97,58 @@ class EventoInfo extends Component {
                                 icon='long-arrow-alt-left'
                                 size='3x'
                                 color='#e64f65'
-                                style={{ marginRight: 8 }}
                             />
-                            <p>VOLTAR</p>
                         </button>
                     </Link>
 
                 </div>
+
+                {
+                    this.state.indexSelect !== null &&
+                    <div className="black-screen">
+                        <button
+                            type="button"
+                            onClick={() => this.setState({ ...this.state, indexSelect: null })}
+                            className="close-button"
+                        >
+                            <FontAwesomeIcon
+                                icon="times"
+                                color={'#fff'}
+                                size='2x'
+                            />
+                        </button>
+                        <img
+                            alt=""
+                            src={this.state.noticia.imagens[this.state.indexSelect].src}
+                            style={{ marginTop: -50, borderRadius: 4 }}
+                        />
+
+                        <button
+                            type="button"
+                            onClick={() => this.mudarFoto(+1, 0)}
+                            style={{ position: 'absolute', right: 20 }}
+                        >
+                            <FontAwesomeIcon
+                                icon="arrow-circle-right"
+                                color={'#fff'}
+                                size='2x'
+                            />
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onClick={() => this.mudarFoto(-1, this.state.noticia.imagens.length - 1)}
+                            style={{ position: 'absolute', left: 20 }}
+                        >
+                            <FontAwesomeIcon
+                                icon="arrow-circle-left"
+                                color='#fff'
+                                size="2x"
+                            />
+                        </button>
+                    </div>
+                }
 
                 <Footer />
 

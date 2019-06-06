@@ -29,14 +29,9 @@ class Login extends Component {
         this.handleAdm()
     }
 
-    componentDidMount() {
-        console.log(this.props)
-    }
-
     async handleAdm() {
         const admLogado = await sessionStorage.getItem('admLogado')
         this.setState({ modoADM: admLogado })
-        console.log(admLogado)
     }
 
     handleSubmit = e => {
@@ -172,9 +167,7 @@ class Login extends Component {
                         </React.Fragment>
                     }
                 </div>
-
             </Container>
-
         )
     }
 }
