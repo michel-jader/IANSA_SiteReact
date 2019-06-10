@@ -10,6 +10,7 @@ import Equipe from '../Views/Equipe/Equipe';
 import Eventos from '../Views/Eventos/eventos';
 import Login from '../Views/Login/Login';
 import EventoInfo from '../Views/EventoInfo/EventoInfo';
+import AcoesEvento from '../Views/AcoesEvento/acoesEvento';
 
 export default () =>
     <Switch>
@@ -17,6 +18,8 @@ export default () =>
         <Route path="/sobre" component={Sobre} />
         <Route path="/servicos" component={Servicos} />
         <Route exact path="/eventos" component={Eventos} />
+        <Route path="/eventos/adm/adicionar" component={AcoesEvento} />
+        <Route path="/eventos/adm/editar/:id" component={AcoesEvento} />
         <Route path="/eventos/:id" component={EventoInfo} />
         <Route path="/seja-um-mantenedor" component={Mantenedor} />
         <Route path="/equipe" component={Equipe} />

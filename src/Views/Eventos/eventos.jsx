@@ -9,7 +9,6 @@ import Container from '../../components/Container/Container';
 import Footer from '../../components/Footer/Footer';
 import { definirPost } from '../../actions/eventosActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 class Eventos extends Component {
 
     constructor(props) {
@@ -31,11 +30,9 @@ class Eventos extends Component {
     render() {
         return (
             <Container classe="eventos_background">
-
                 {
                     !this.state.modoADM ?
                         <React.Fragment>
-
                             <div className="flex column align-center" style={{ marginTop: 50 }}>
                                 <div className="flex column t-center title-container">
                                     <h1>Eventos e Notícias</h1>
@@ -78,14 +75,17 @@ class Eventos extends Component {
                                 <div className="card-tabela-eventos">
                                     <div className="header">
                                         <p>Postagens</p>
-                                        <button className="add-button">
-                                            <FontAwesomeIcon
-                                                icon="plus"
-                                                color="#e64e65"
-                                                style={{ fontSize: 22, marginRight: 8 }}
-                                            />
-                                            ADICIONAR POSTAGEM
-                                    </button>
+                                        <Link to={`/eventos/adm/adicionar`}>
+
+                                            <button className="add-button">
+                                                <FontAwesomeIcon
+                                                    icon="plus"
+                                                    color="#e64e65"
+                                                    style={{ fontSize: 22, marginRight: 8 }}
+                                                />
+                                                <p>ADICIONAR POSTAGEM</p>
+                                            </button>
+                                        </Link>
                                     </div>
                                     <table cellSpacing="0" className="table">
                                         <thead>
@@ -106,7 +106,8 @@ class Eventos extends Component {
                                                             height={40}
                                                             style={{
                                                                 borderRadius: 50,
-                                                                marginTop: 5
+                                                                marginTop: 5,
+                                                                marginLeft: 10
                                                             }}
                                                         />
                                                     </td>
@@ -114,13 +115,15 @@ class Eventos extends Component {
                                                     <td> {noticia.data} </td>
 
                                                     <td>
-                                                        <button style={{ marginRight: 5 }}>
-                                                            <FontAwesomeIcon
-                                                                icon="edit"
-                                                                color={'#2d3754'}
-                                                                style={{ fontSize: 22 }}
-                                                            />
-                                                        </button>
+                                                        <Link to={`/eventos/adm/editar/${noticia.id}`}>
+                                                            <button style={{ marginRight: 5 }}>
+                                                                <FontAwesomeIcon
+                                                                    icon="edit"
+                                                                    color={'#2d3754'}
+                                                                    style={{ fontSize: 22 }}
+                                                                />
+                                                            </button>
+                                                        </Link>
                                                         <button>
 
                                                             <FontAwesomeIcon
@@ -131,7 +134,7 @@ class Eventos extends Component {
                                                         </button>
                                                     </td>
                                                 </tr>
-                                            ))}
+                                        ))}
                                         </tbody>
                                     </table>
                                     <div style={{ width: '100%' }}>
@@ -142,7 +145,6 @@ class Eventos extends Component {
                             </div>
                         </React.Fragment>
                 }
-
 
                 <Footer />
             </Container>

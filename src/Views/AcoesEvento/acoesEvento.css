@@ -1,0 +1,88 @@
+.wrapper {
+    display: flex;
+    width: 95%;
+    max-width: 560px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 16px 8px 16px 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 
+                0 1px 2px rgba(0,0,0,0.24);
+}
+
+.formulario {
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+}
+
+.advance {
+    color: #fff;
+    background-color: #227b87;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+.file-container {
+    width: 100%;
+    max-width: 536px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #e0e0e0
+}
+
+.user-content {
+    width: 45%;
+    min-width: 318px;
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: -70px;
+}
+
+.no-adm-content {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 540px;
+    margin-bottom: 20px;
+}
+
+.header-content p {
+    font-size: 26px;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.imagens {
+    border-radius: 4px;
+    margin: 10px;
+    border: 2px solid #757575
+}
