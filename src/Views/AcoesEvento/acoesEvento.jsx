@@ -155,6 +155,7 @@ class AcoesEvento extends Component {
                                                     key={index}
                                                     src={imagem.src}
                                                     className="imagens"
+                                                    alt="imagens"
                                                 />
                                             ))}
 

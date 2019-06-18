@@ -45,3 +45,7 @@
     color: #fff;
     font-size: 18px;
 }
+
+.cancel p {
+    color: #e64f65 !important
+}

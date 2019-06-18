@@ -121,11 +121,7 @@ class Login extends Component {
                                 <div className="login-card">
 
                                     <form
-                                        style={{
-                                            width: '100%',
-                                            display: 'flex',
-                                            flexDirection: 'column'
-                                        }}
+                                        className="formLogin"
                                         onSubmit={this.handleSubmit}
                                         autoComplete="false"
                                     >

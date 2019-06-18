@@ -9,17 +9,29 @@ import Container from '../../components/Container/Container';
 import Footer from '../../components/Footer/Footer';
 import { definirPost } from '../../actions/eventosActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ActionModal from '../../components/Modal/ActionModal';
 class Eventos extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            modoADM: false
+            modoADM: false,
+            modal: false,
+            eventoEmQuestao: null
         }
     }
 
     componentWillMount() {
         this.handleAdm()
+    }
+
+    handleDelete(object) {
+        this.setState({ ...this.state, modal: true, eventoEmQuestao: object })
+        console.log(object)
+    }
+
+    delete() {
+        console.log('VAI DELETAR')
     }
 
     async handleAdm() {
@@ -30,6 +42,18 @@ class Eventos extends Component {
     render() {
         return (
             <Container classe="eventos_background">
+
+                {this.state.modal &&
+                    <ActionModal
+                        modalIcon='trash-alt'
+                        modalColor='#f64e65'
+                        modalText='Deseja excluir o evento?'
+                        btnText='Excluir'
+                        modalFuncao={this.delete()}
+                        cancel={() => this.setState({ modal: false })}
+                    />
+                }
+
                 {
                     !this.state.modoADM ?
                         <React.Fragment>
@@ -104,11 +128,7 @@ class Eventos extends Component {
                                                             src={noticia.imagemCapa}
                                                             width={40}
                                                             height={40}
-                                                            style={{
-                                                                borderRadius: 50,
-                                                                marginTop: 5,
-                                                                marginLeft: 10
-                                                            }}
+                                                            className="imgTabela"
                                                         />
                                                     </td>
                                                     <td> {noticia.titulo} </td>
@@ -124,8 +144,7 @@ class Eventos extends Component {
                                                                 />
                                                             </button>
                                                         </Link>
-                                                        <button>
-
+                                                        <button onClick={() => this.handleDelete(noticia)}>
                                                             <FontAwesomeIcon
                                                                 icon="trash-alt"
                                                                 color="#f64e65"
@@ -134,7 +153,7 @@ class Eventos extends Component {
                                                         </button>
                                                     </td>
                                                 </tr>
-                                        ))}
+                                            ))}
                                         </tbody>
                                     </table>
                                     <div style={{ width: '100%' }}>

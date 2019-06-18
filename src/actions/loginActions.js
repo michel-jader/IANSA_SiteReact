@@ -7,6 +7,7 @@ export const logar = (usuario, senha) => (dispatch) => {
             sessionStorage.setItem('admLogado', 'true')
             dispatch(switch_loading(false))
             dispatch(handle_status('sucesso'))
+            console.log(sessionStorage)
         } else {
             dispatch(switch_loading(false))
             dispatch(handle_status('falha'))
