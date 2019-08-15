@@ -203,6 +203,18 @@ a:hover { text-decoration: none }
     margin-left: 10px
 }
 
+.no-post-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    flex-direction: column
+}
+
+.no-post-cont p {
+    font-size: 18px;
+}
+
 @media(max-width: 1024px) {
     .p-container-content {
         width: 100%;

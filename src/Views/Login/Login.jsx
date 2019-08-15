@@ -84,8 +84,7 @@ class Login extends Component {
                     acaoSucesso={() => {
                         this.props.handle_status(null)
                         window.location.reload()
-                    }
-                    }
+                    }}
                 />
 
                 <div className="flex column align-center">

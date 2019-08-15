@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 
 import './eventos.css';
 import '../../main/App.css';
+import imagemEvento from '../../utils/imgs/evento.jpg'
 import Container from '../../components/Container/Container';
 import Footer from '../../components/Footer/Footer';
-import { definirPost } from '../../actions/eventosActions'
+import { listarNoticias, definirPost } from '../../actions/eventosActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ActionModal from '../../components/Modal/ActionModal';
 class Eventos extends Component {
@@ -19,6 +20,10 @@ class Eventos extends Component {
             modal: false,
             eventoEmQuestao: null
         }
+    }
+
+    componentDidMount() {
+        this.props.listarNoticias()
     }
 
     componentWillMount() {
@@ -63,27 +68,49 @@ class Eventos extends Component {
                                     <h3>Fique por dentro dos eventos organizados pelo IANSA</h3>
                                 </div>
 
-
                                 <div className="post-wrapper">
-                                    {this.props.listaNoticias.map(noticia => (
-                                        <div className="post" key={noticia.id}>
-                                            <img
-                                                src={noticia.imagemCapa}
-                                                alt=""
-                                                className="image"
-                                            />
-                                            <div className="p-6">
-                                                <p className="post-title">{noticia.titulo}</p>
-                                                <p className="post-desc"> {noticia.descricao} </p>
+
+
+                                    {
+                                        !this.props.listaNoticias.length ?
+                                            <div className="no-post-cont">
+                                                <React.Fragment>
+                                                    <FontAwesomeIcon
+                                                        icon='folder-open'
+                                                        size='10x'
+                                                        color='#e64f65'
+                                                    />
+                                                    <p>Não há postagens cadastradas até o momento</p>
+
+                                                </React.Fragment>
                                             </div>
-                                            <Link to={`/eventos/${noticia.id}`}>
-                                                <button onClick={() => this.props.definirPost(noticia)}>
-                                                    <p>Ver mais</p>
-                                                </button>
-                                            </Link>
-                                        </div>
-                                    ))}
+                                            :
+                                            <React.Fragment>
+
+                                                {
+                                                    this.props.listaNoticias.map(noticia => (
+                                                        <div className="post" key={noticia.id}>
+                                                            <img
+                                                                src={noticia.imagemCapa}
+                                                                alt=""
+                                                                className="image"
+                                                            />
+                                                            <div className="p-6">
+                                                                <p className="post-title">{noticia.titulo}</p>
+                                                                <p className="post-desc"> {noticia.descricao} </p>
+                                                            </div>
+                                                            <Link to={`/eventos/${noticia.id}`}>
+                                                                <button onClick={() => this.props.definirPost(noticia)}>
+                                                                    <p>Ver mais</p>
+                                                                </button>
+                                                            </Link>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </React.Fragment>
+                                    }
                                 </div>
+
                             </div>
                         </React.Fragment>
 
@@ -111,51 +138,63 @@ class Eventos extends Component {
                                             </button>
                                         </Link>
                                     </div>
-                                    <table cellSpacing="0" className="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Imagem</th>
-                                                <th>Evento</th>
-                                                <th>Data</th>
-                                                <th>Ações</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {this.props.listaNoticias.map((noticia, index) => (
-                                                <tr className="hover" key={index}>
-                                                    <td>
-                                                        <img alt="imagem de capa"
-                                                            src={noticia.imagemCapa}
-                                                            width={40}
-                                                            height={40}
-                                                            className="imgTabela"
-                                                        />
-                                                    </td>
-                                                    <td> {noticia.titulo} </td>
-                                                    <td> {noticia.data} </td>
+                                    {this.props.listaNoticias.length ?
+                                        <React.Fragment>
 
-                                                    <td>
-                                                        <Link to={`/eventos/adm/editar/${noticia.id}`}>
-                                                            <button style={{ marginRight: 5 }}>
-                                                                <FontAwesomeIcon
-                                                                    icon="edit"
-                                                                    color={'#2d3754'}
-                                                                    style={{ fontSize: 22 }}
+                                            <table cellSpacing="0" className="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Imagem</th>
+                                                        <th>Evento</th>
+                                                        <th>Data</th>
+                                                        <th>Ações</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {this.props.listaNoticias.map((noticia, index) => (
+                                                        <tr className="hover" key={index}>
+                                                            <td>
+                                                                <img alt="imagem de capa"
+                                                                    src={noticia.mainImage || imagemEvento }
+                                                                    width={40}
+                                                                    height={40}
+                                                                    className="imgTabela"
                                                                 />
-                                                            </button>
-                                                        </Link>
-                                                        <button onClick={() => this.handleDelete(noticia)}>
-                                                            <FontAwesomeIcon
-                                                                icon="trash-alt"
-                                                                color="#f64e65"
-                                                                style={{ fontSize: 22 }}
-                                                            />
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+                                                            </td>
+                                                            <td> {noticia.title} </td>
+                                                            <td> {noticia.createdAt} </td>
+
+                                                            <td>
+                                                                <Link to={`/eventos/adm/editar/${noticia.id}`}>
+                                                                    <button style={{ marginRight: 5 }}>
+                                                                        <FontAwesomeIcon
+                                                                            icon="edit"
+                                                                            color={'#2d3754'}
+                                                                            style={{ fontSize: 22 }}
+                                                                        />
+                                                                    </button>
+                                                                </Link>
+                                                                <button onClick={() => this.handleDelete(noticia)}>
+                                                                    <FontAwesomeIcon
+                                                                        icon="trash-alt"
+                                                                        color="#f64e65"
+                                                                        style={{ fontSize: 22 }}
+                                                                    />
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+
+                                                </tbody>
+                                            </table>
+                                        </React.Fragment>
+
+                                        :
+                                        <div style={{ width: '100%', paddingTop: 8, paddingBottom: 8 }}>
+                                            <p style={{ fontSize: 18 }}>Não há postagens cadastradas até o momento</p>
+                                        </div>
+
+                                    }
                                     <div style={{ width: '100%' }}>
 
                                     </div>
@@ -179,7 +218,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(
-    { definirPost },
+    { definirPost, listarNoticias },
     dispatch
 )
 

@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import {
-  faBars, faArrowCircleLeft, faCheck, faUtensils,
-  faBed, faBus, faChild, faGift, faBook, faExclamationCircle,
-  faUserCog, faTrashAlt, faEdit, faPlus, faLongArrowAltLeft,
-  faTimes, faArrowCircleRight, faArrowRight
-} from '@fortawesome/free-solid-svg-icons'
+import * as faIcons from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter } from 'react-router-dom';
 
 import Toolbar from '../components/Toolbar/Toolbar';
@@ -15,25 +10,26 @@ import BackDrop from '../components/BackDrop/Backdrop'
 import Routes from './Routes';
 
 library.add(
-  fab,
-  faBars,
-  faArrowCircleLeft,
-  faCheck,
-  faUtensils,
-  faBed,
-  faBus,
-  faChild,
-  faGift,
-  faBook,
-  faExclamationCircle,
-  faUserCog,
-  faTrashAlt,
-  faEdit,
-  faPlus,
-  faLongArrowAltLeft,
-  faTimes,
-  faArrowCircleRight,
-  faArrowRight
+fab,
+faIcons.faBars,
+faIcons.faArrowCircleLeft,
+faIcons.faCheck,
+faIcons.faUtensils,
+faIcons.faBed,
+faIcons.faBus,
+faIcons.faChild,
+faIcons.faGift,
+faIcons.faBook,
+faIcons.faExclamationCircle,
+faIcons.faUserCog,
+faIcons.faTrashAlt,
+faIcons.faEdit,
+faIcons.faPlus,
+faIcons.faLongArrowAltLeft,
+faIcons.faTimes,
+faIcons.faArrowCircleRight,
+faIcons.faArrowRight,
+faIcons.faFolderOpen,
 )
 
 class App extends Component {

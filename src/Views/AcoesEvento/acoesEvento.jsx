@@ -4,27 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Input from 'muicss/lib/react/input'
 import Textarea from 'muicss/lib/react/textarea'
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import '../../main/App.css';
-import './acoesEvento.css'
+import { cadastrarPost } from '../../actions/eventosActions';
 import Container from '../../components/Container/Container';
 import Footer from '../../components/Footer/Footer';
+import '../../main/App.css';
+import './acoesEvento.css'
 
 class AcoesEvento extends Component {
     constructor(props) {
         super(props)
         this.state = {
             modoADM: false,
-            idNoticia: null,
-            noticia: {
-                id: null,
-                titulo: '',
-                descricao: '',
-                texto: '',
-                data: null,
-                imagemCapa: '',
-                imagens: []
-            }
+            title: '',
+            subtitle: '',
+            content: '',
+            date: 'null',
+            mainImage: '',
+            images: []
         }
     }
 
@@ -32,12 +30,31 @@ class AcoesEvento extends Component {
         const { name, value } = e.target;
         e.preventDefault()
         this.setState({ [name]: value })
-        console.log(this.state)
+        // console.log(this.state)
+        // console.log(e, value)
     }
 
-    handleSubmit = e => {
-        e.preventDefault()
-        console.log(this.state)
+    handleImage = (image) => {
+        console.log(image)
+        this.setState({
+            ...this.state,
+            mainImage: image
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const { title, date, content, mainImage, subtitle, images } = this.state
+
+        var form = {
+            title,
+            subtitle,
+            date,
+            content,
+            mainImage,
+            images
+        }
+        this.props.cadastrarPost(form)
     }
 
     componentWillMount() {
@@ -53,7 +70,6 @@ class AcoesEvento extends Component {
                 this.setState({ ...this.state, noticia: noticia })
             }
         })
-        console.log(this.state.noticia)
     }
 
     async handleAdm() {
@@ -93,14 +109,14 @@ class AcoesEvento extends Component {
                                         type="text"
                                         floatingLabel={true}
                                         required={true}
-                                        id="titulo"
-                                        name="titulo"
+                                        id="title"
+                                        name="title"
                                         autoComplete="false"
                                         formNoValidate={true}
                                         autoCapitalize="true"
                                         autoCorrect="false"
                                         onChange={this.handleChange}
-                                        defaultValue={this.state.noticia.titulo || ''}
+                                        defaultValue={this.state.title || ''}
                                     />
 
                                     <Input
@@ -109,11 +125,11 @@ class AcoesEvento extends Component {
                                         floatingLabel={false}
                                         required={true}
                                         id="data"
-                                        name="data"
+                                        name="date"
                                         autoComplete="false"
                                         formNoValidate={true}
                                         onChange={this.handleChange}
-                                        defaultValue={this.state.noticia.data || ''}
+                                        defaultValue={this.state.date || null}
                                     />
 
                                     <Input
@@ -129,7 +145,7 @@ class AcoesEvento extends Component {
                                         autoCapitalize="true"
                                         autoCorrect="false"
                                         onChange={this.handleChange}
-                                        defaultValue={this.state.noticia.descricao}
+                                        defaultValue={this.state.subtitle}
                                     />
 
                                     <Textarea
@@ -137,18 +153,18 @@ class AcoesEvento extends Component {
                                         floatingLabel={true}
                                         required={true}
                                         id="texto"
-                                        name="texto"
+                                        name="content"
                                         autoComplete="false"
                                         autoCapitalize="true"
                                         autoCorrect="false"
                                         onChange={this.handleChange}
-                                        defaultValue={this.state.noticia.texto}
+                                        defaultValue={this.state.content}
                                     />
 
-                                    {this.state.noticia.imagens.length > 0 &&
+                                    {this.state.images.length > 0 &&
                                         <div className="images-container">
 
-                                            {this.state.noticia.imagens.map((imagem, index) => (
+                                            {this.state.images.map((imagem, index) => (
                                                 <img
                                                     width={80}
                                                     height={70}
@@ -166,10 +182,10 @@ class AcoesEvento extends Component {
                                         <Input
                                             type="file"
                                             id="imgCapa"
-                                            name="imgCapa"
+                                            name="mainImage"
                                             required={true}
                                             onChange={this.handleChange}
-                                            defaultValue={this.state.noticia.imagemCapa}
+                                            defaultValue={this.state.mainImage}
                                         />
                                     </div>
 
@@ -228,4 +244,8 @@ const mapStateToProps = state => ({
     listaNoticias: state.noticias.listaNoticias,
 })
 
-export default connect(mapStateToProps)(AcoesEvento)
+const mapDispatchToProps = dispatch => bindActionCreators({
+    cadastrarPost
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(AcoesEvento)
